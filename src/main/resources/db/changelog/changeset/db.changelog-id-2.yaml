@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: luis & jonantan
+      sqlFile:
+        dbms: "h2"
+        encoding: utf8
+        endDelimiter: "\n"
+        path: "../script/insert-data-changelog.sql"
+        relativeToChangelogFile: true
+        splitStatements: true
+        stripComments: true

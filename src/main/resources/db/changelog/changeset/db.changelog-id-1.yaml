@@ -1,0 +1,84 @@
+databaseChangeLog:
+  - changeSet:
+      - id: 1
+      - author: luis
+      - changes:
+          - createTable:
+              tableName: Brands
+              columns:
+                - column:
+                    name: BRAND_ID
+                    type: bigint
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: DESCRIPTION
+                    type: varchar(55)
+                    constraints:
+                      nullable: false
+          - createTable:
+              tableName: RetailPrice
+              columns:
+                - column:
+                    name: RETAIL_PRICE_ID
+                    type: bigint
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: BRAND_ID
+                    type: bigint
+                    constraints:
+                      nullable: false
+                - column:
+                    name: START_DATE
+                    type: TIMESTAMP
+                    constraints:
+                      nullable: false
+                - column:
+                    name: END_DATE
+                    type: TIMESTAMP
+                    constraints:
+                      nullable: false
+                - column:
+                    name: PRICE_LIST
+                    type: INT
+                    constraints:
+                      nullable: false
+                - column:
+                    name: PRODUCT_ID
+                    type: INT
+                    constraints:
+                      nullable: false
+                - column:
+                    name: PRIORITY
+                    type: INT
+                    constraints:
+                      nullable: false
+                - column:
+                    name: PRICE
+                    type: DECIMAL
+                    constraints:
+                      nullable: false
+                - column:
+                    name: CURR
+                    type: VARCHAR(3)
+                    constraints:
+                      nullable: false
+
+  - changeSet:
+      - id: 2
+      - author: luis
+      - addForeignKeyConstraint:
+          - baseColumnNames: BRAND_ID
+          - baseTableName: RetailPrice
+          - constraintName: fk_brand_retailprice
+          - deferrable: false
+          - initiallyDeferred: false
+          - onDelete: NO ACTION
+          - onUpdate: NO ACTION
+          - referencedColumnNames: BRAND_ID
+          - referencedTableName: Brands

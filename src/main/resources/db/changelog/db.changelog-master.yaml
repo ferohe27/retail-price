@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: luis & jonatan
+  - include:
+      - relativeToChangelogFile: true
+      - file: "changeset/db.changelog-id-1.yaml"
+  - include:
+      - relativeToChangelogFile: true
+      - file: "changeset/db.changelog-id-2.yaml"
