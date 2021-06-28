@@ -14,7 +14,7 @@
 
 ### Test Application
 The application start on port 8086. For test use these endpoint:
-* Search price product : http://localhost:8086/api/price/detail/products/brandid/1/applydate/{applyDate}/productid/35455?applyDate=2020-06-14T10%3A00%3A00
+* Search price product : http://localhost:8086/api/price/detail/products/brandid/1/productid/35455/applydate/2020-06-14T13%3A59%3A35
 * Pattern ApplyDate:  yyyy-MM-dd'T'HH:mm:ss
 
 *  With Swagger we can  to see all endpoint: http://localhost:8086/swagger-ui.html
